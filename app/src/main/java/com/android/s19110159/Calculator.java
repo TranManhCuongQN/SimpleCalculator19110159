@@ -1,8 +1,6 @@
 package com.android.s19110159;
 
 public class Calculator {
-    public enum Operator {ADD, SUB, DIV, MUL, POW, FACT, LOG}
-
     public double add(double firstOperand, double secondOperand) {
         return firstOperand + secondOperand;
     }

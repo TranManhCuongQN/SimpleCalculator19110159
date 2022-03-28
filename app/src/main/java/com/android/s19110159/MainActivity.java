@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mOperandTwoEditText;
 
     private TextView mResultTextView;
+    private  Button btnAdd , btnSub , btnMul , btnDiv , btnPow , btnLog , btnFact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,160 +29,161 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize the calculator class and all the views
         mCalculator = new Calculator();
+        AnhXa();
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.add(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOperandTwoEditText.setEnabled(true);
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.sub(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOperandTwoEditText.setEnabled(true);
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.mul(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOperandTwoEditText.setEnabled(true);
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.div(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnPow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOperandTwoEditText.setEnabled(true);
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.pow(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mOperandTwoEditText.setEnabled(true);
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else if(mOperandTwoEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ hai",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    double numberTwo = Double.parseDouble(mOperandTwoEditText.getText().toString());
+                    double result = mCalculator.log(numberOne,numberTwo);
+                    mResultTextView.setText(result+"");
+                    Toast.makeText(MainActivity.this,"Result: "+result,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnFact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mOperandOneEditText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"Mời bạn nhập số thứ nhất",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    mOperandTwoEditText.setText("");
+                    mOperandTwoEditText.setEnabled(false);
+                    double numberOne = Double.parseDouble(mOperandOneEditText.getText().toString());
+                    if(numberOne <= 0){
+                        Toast.makeText(MainActivity.this,"Mời bạn nhập lại số thứ nhất (numberOne > 0 )",Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        double result = mCalculator.fact(numberOne);
+                        mResultTextView.setText(result + "");
+                        Toast.makeText(MainActivity.this, "Result: " + result, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+
+
+    }
+    private void AnhXa(){
         mResultTextView = findViewById(R.id.operation_result_text_view);
         mOperandOneEditText = findViewById(R.id.operand_one_edit_text);
         mOperandTwoEditText = findViewById(R.id.operand_two_edit_text);
-    }
-
-    private boolean isFull() {
-        if (mOperandOneEditText.getText().toString().isEmpty() ||
-                mOperandTwoEditText.getText().toString().isEmpty()) {
-            return false;
-        }
-        return true;
-    }
-
-    public void onAdd(View view) {
-        if (isFull()) {
-            compute(Calculator.Operator.ADD);
-        }
-        else{
-            Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void onSub(View view) {
-        if (isFull()) {
-            compute(Calculator.Operator.SUB);
-        }
-        else{
-            Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void onDiv(View view) {
-        try {
-            if (isFull()) {
-                compute(Calculator.Operator.DIV);
-            }
-            else{
-                Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (IllegalArgumentException iae) {
-            Log.e(TAG, "IllegalArgumentException", iae);
-            mResultTextView.setText("Error");
-        }
-    }
-
-    public void onMul(View view) {
-        if (isFull()) {
-            compute(Calculator.Operator.MUL);
-        }
-        else{
-            Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void onPow(View view) {
-        try {
-            if (isFull()) {
-                compute(Calculator.Operator.POW);
-            }
-            else{
-                Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (IllegalArgumentException iae) {
-            Log.e(TAG, "IllegalArgumentException", iae);
-            mResultTextView.setText("Error");
-        }
-    }
-
-    public void onFact(View view) {
-        try {
-            if (isFull()) {
-                compute(Calculator.Operator.FACT);
-            }
-            else{
-                Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-            }
-        } catch (IllegalArgumentException iae) {
-            Log.e(TAG, "IllegalArgumentException", iae);
-            mResultTextView.setText("Error");
-        }
-    }
-
-    public void onLog(View view) {
-        try {
-            if (isFull()) {
-                compute(Calculator.Operator.LOG);
-            }
-            else{
-                Toast.makeText(this, "Please fill out all the fields", Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (IllegalArgumentException iae) {
-            Log.e(TAG, "IllegalArgumentException", iae);
-            mResultTextView.setText("Error");
-        }
-    }
-
-    private void compute(Calculator.Operator operator) {
-        double operandOne;
-        double operandTwo;
-        try {
-            operandOne = getOperand(mOperandOneEditText);
-            operandTwo = getOperand(mOperandTwoEditText);
-        } catch (NumberFormatException nfe) {
-            Log.e(TAG, "NumberFormatException", nfe);
-            mResultTextView.setText("Error");
-            return;
-        }
-
-        String result;
-        switch (operator) {
-            case ADD:
-                result = String.valueOf(
-                        mCalculator.add(operandOne, operandTwo));
-                break;
-            case SUB:
-                result = String.valueOf(
-                        mCalculator.sub(operandOne, operandTwo));
-                break;
-            case DIV:
-                result = String.valueOf(
-                        mCalculator.div(operandOne, operandTwo));
-                break;
-            case MUL:
-                result = String.valueOf(
-                        mCalculator.mul(operandOne, operandTwo));
-                break;
-            case POW:
-                result = String.valueOf(
-                        mCalculator.pow(operandOne, operandTwo));
-                break;
-            case FACT:
-                result = String.valueOf(
-                        mCalculator.fact(operandOne));
-                break;
-            case LOG:
-                result = String.valueOf(
-                        mCalculator.log(operandOne, operandTwo));
-                break;
-            default:
-                result = "Error";
-                break;
-        }
-        mResultTextView.setText(result);
-    }
-
-    private static Double getOperand(EditText operandEditText) {
-        String operandText = getOperandText(operandEditText);
-        return Double.valueOf(operandText);
-    }
-
-    private static String getOperandText(EditText operandEditText) {
-        return operandEditText.getText().toString();
+        btnAdd = findViewById(R.id.operation_add_btn);
+        btnSub = findViewById(R.id.operation_sub_btn);
+        btnMul = findViewById(R.id.operation_mul_btn);
+        btnDiv = findViewById(R.id.operation_div_btn);
+        btnPow = findViewById(R.id.operation_pow_btn);
+        btnLog = findViewById(R.id.operation_log_btn);
+        btnFact = findViewById(R.id.operation_fact_btn);
     }
 }

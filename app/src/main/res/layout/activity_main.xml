@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nhập số thứ nhất"
-        android:inputType="numberDecimal"/>
+        android:inputType="numberDecimal|numberSigned"/>
 
     <EditText
         android:id="@+id/operand_two_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nhập số thứ hai"
-        android:inputType="numberDecimal"/>
+        android:inputType="numberDecimal|numberSigned"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Cộng"
-            android:onClick="onAdd"/>
+            />
 
         <Button
             android:id="@+id/operation_sub_btn"
@@ -39,7 +39,7 @@
             android:layout_toEndOf="@id/operation_add_btn"
             android:layout_toRightOf="@id/operation_add_btn"
             android:text="Trừ"
-            android:onClick="onSub"/>
+          />
 
         <Button
             android:id="@+id/operation_div_btn"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/operation_add_btn"
             android:text="Chia"
-            android:onClick="onDiv"/>
+           />
 
         <Button
             android:id="@+id/operation_mul_btn"
@@ -57,7 +57,7 @@
             android:layout_toEndOf="@id/operation_add_btn"
             android:layout_toRightOf="@id/operation_add_btn"
             android:text="Nhân"
-            android:onClick="onMul"/>
+           />
 
         <Button
             android:id="@+id/operation_pow_btn"
@@ -66,7 +66,7 @@
             android:layout_toEndOf="@id/operation_sub_btn"
             android:layout_toRightOf="@id/operation_sub_btn"
             android:text="Mũ"
-            android:onClick="onPow"/>
+           />
 
         <Button
             android:id="@+id/operation_fact_btn"
@@ -76,7 +76,7 @@
             android:layout_toEndOf="@id/operation_sub_btn"
             android:layout_toRightOf="@id/operation_sub_btn"
             android:text="Giây thừa"
-            android:onClick="onFact"/>
+           />
 
         <Button
             android:id="@+id/operation_log_btn"
@@ -85,7 +85,7 @@
             android:layout_toEndOf="@id/operation_pow_btn"
             android:layout_toRightOf="@id/operation_pow_btn"
             android:text="Log"
-            android:onClick="onLog"/>
+           />
     </RelativeLayout>
 
     <LinearLayout
